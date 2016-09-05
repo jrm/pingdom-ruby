@@ -13,7 +13,7 @@ module Pingdom
       @connection = Faraday::Connection.new(:url => "https://api/pingdom.com/api/2.0/", ssl: {verify: false}) do |builder|
         builder.url_prefix = "https://api.pingdom.com/api/2.0"
 
-        # builder.adapter :logger, @options[:logger]
+        builder.adapter :logger, @options[:logger]
 
         builder.adapter @options[:http_driver]
 
